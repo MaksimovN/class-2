@@ -8,7 +8,4 @@
   },
   "author": "Maksimov",
   "license": "MIT"
-"engines": {
-    "node": "17.x"
-  }
 }
