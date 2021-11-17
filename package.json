@@ -8,4 +8,7 @@
   },
   "author": "Maksimov",
   "license": "MIT"
+  "scripts": {
+    "start": "node app.js"
+}
 }
