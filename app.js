@@ -1,25 +1,44 @@
 
-const http = require('http')
+const express = require('express');
+const path = require('path');
+const app = express();
 
-const port = process.env.PORT || 80
+const port = process.env.PORT || 8011;
 
 
-http.createServer((request, response) => {
-	switch (request.method) {
-	case 'POST':
- response.statusCode = 200
-  response.setHeader('Content-Type', 'text/xml')
-  response.end('Ответ на POST запрос (XML)')
-break;
-	case 'GET':
- response.statusCode = 200
-  response.setHeader('Content-Type', 'text/html')
-  response.end('<meta charset="utf-8"> <h1>Ответ на GET запрос (HTML)</h1>')
-break;
-	case 'PUT':
- response.statusCode = 200
-  response.setHeader('Content-Type', 'application/json')
-  response.end('Ответ на PUT запрос (JSON)')
-break;
-}
-}).listen(port);
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+const task = (x) => {
+  return new Promise((resolve, reject) => {
+    if (x < 18) resolve('yes');
+    else reject('no');
+  });
+};
+
+app.get('/login', (req, res) => {
+  res.send('Максимов');
+});
+
+app.get('/promise', (req, res) => {
+  res.send(task.toString());
+});
+
+app.get('/promise/:val', async (req, res) =>{
+  try{
+    const val = req.params.val;
+    const result = await task(parseInt(val))
+    res.send(result)
+  }catch(err){
+    res.send(err)
+  }
+})
+
+app.get('/fetch', (req, res) => {
+  res.set({ 'Content-Type': 'text/html; charset=UTF-8' });
+  res.sendFile(path.resolve(__dirname, 'index.html'));
+});
+
+app.listen(port);
