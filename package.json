@@ -8,7 +8,7 @@
     "start": "node app.js"
   },
   "author": "Maksimov",
-  "license": "MIT"
+  "license": "MIT",
   "dependencies": {
     "express": "4.17.1"
   }
