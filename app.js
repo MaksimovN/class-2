@@ -51,4 +51,8 @@ app.get('/fetch', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
+app.get('*', (req, res) => {
+  res.send('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 14pt; color: red;} body{background-color: yellow;}</style></head><body><p>ошибка 404</p></body></html>');
+});
+
 app.listen(port);
