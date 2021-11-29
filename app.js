@@ -19,7 +19,17 @@ const task = (x) => {
 };
 
 app.get('/login', (req, res) => {
-  res.send('Максимов');
+  res.send('Maksimov');
+});
+
+app.get('/login/ru', (req, res) => {
+  res.set({ 'Content-Type': 'text/html; charset=UTF-8' });
+  res.send('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 14pt;}</style></head> <body><p>Максимов</p></body></html>')
+});
+
+app.get('/login/by', (req, res) => {
+  res.set({ 'Content-Type': 'text/plain; charset=UTF-8' });
+  res.send('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 14pt;}</style></head> <body><p>Максимов</p></body></html>')
 });
 
 app.get('/promise', (req, res) => {
@@ -40,8 +50,5 @@ app.get('/fetch', (req, res) => {
   res.set({ 'Content-Type': 'text/html; charset=UTF-8' });
   res.sendFile(path.resolve(__dirname, 'index.html'));
 });
-
-
-
 
 app.listen(port);
