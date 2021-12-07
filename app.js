@@ -23,23 +23,23 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/login/1', (req, res) => {
-  res.set({ 'Content-Type': 'application/json;});
+  res.set({ 'Content-Type': 'application/json';});
   res.send('Maksimov');
 });
 
 app.get('/login/2', (req, res) => {
-  res.set({ 'Content-Type': 'application/json; charset=UTF-8' });
+  res.set({ 'Content-Type': 'application/json'; charset=UTF-8' });
   res.send('Maksimov');
 });
 
 app.get('/login/code1', (req, res) => {
   res.set({ 'Content-Type': 'text/html; charset=UTF-8' });
-  res.send('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 21pt;}</style></head> <body><p>Maksimov</p></body></html>')
+  res.send('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 21pt;}</style></head> <body><p>Maksimov</p></body></html>');
 });
 
 app.get('/login/code2', (req, res) => {
   res.set({ 'Content-Type': 'text/plain; charset=UTF-8' });
-  res.send('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 21pt;}</style></head> <body><p>Maksimov</p></body></html>')
+  res.send('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 21pt;}</style></head> <body><p>Maksimov</p></body></html>');
 });
 
 app.get('/promise', (req, res) => {
