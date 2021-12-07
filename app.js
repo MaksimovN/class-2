@@ -62,12 +62,12 @@ app.get('/fetch', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.statusCode = 404
+  res.statusCode = 404;
   res.send('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 14pt; color: red;} body{background-color: blue;}</style></head><body><p>Ужас - ошибка 404 (не найдено)</p></body></html>');
 });
 
 app.get('*', (req, res) => {
-  res.statusCode = 500
+  res.statusCode = 500;
   res.send('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 14pt; color: red;} body{background-color: yellow;}</style></head><body><p>Не понял - ошибка  500 (Internal Server Error)</p></body></html>');
 });
 
