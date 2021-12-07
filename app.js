@@ -19,17 +19,17 @@ const task = (x) => {
 };
 
 app.get('/login', (req, res) => {
-  res.send('Maksimov');
+  res.send('Максимов');
 });
 
 app.get('/login/1', (req, res) => {
   res.set({ 'Content-Type': 'application/json'});
-  res.send('Maksimov');
+  res.send('Максимов');
 });
 
 app.get('/login/2', (req, res) => {
   res.set({ 'Content-Type': 'application/json; charset=UTF-8' });
-  res.send('Maksimov');
+  res.send('Максимов');
 });
 
 app.get('/login/code1', (req, res) => {
