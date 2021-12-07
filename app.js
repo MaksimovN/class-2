@@ -23,12 +23,12 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/login/1', (req, res) => {
-  res.set({ 'Content-Type': 'application/json';});
+  res.set({ 'Content-Type': 'application/json'});
   res.send('Maksimov');
 });
 
 app.get('/login/2', (req, res) => {
-  res.set({ 'Content-Type': 'application/json'; charset=UTF-8' });
+  res.set({ 'Content-Type': 'application/json; charset=UTF-8' });
   res.send('Maksimov');
 });
 
