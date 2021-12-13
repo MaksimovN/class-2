@@ -19,6 +19,7 @@ const task = (x) => {
 };
 
 app.get('/login', (req, res) => {
+  res.setHeader('Content-Type', 'text/plain;charset=utf-8');
   res.end('Максимов');
 });
 
@@ -28,17 +29,17 @@ app.get('/login/1', (req, res) => {
 });
 
 app.get('/login/2', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Content-Type', 'application/json;charset=utf-8');
   res.end('Максимов');
 });
 
 app.get('/login/code1', (req, res) => {
-  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Content-Type', 'text/html;charset=utf-8');
   res.end('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 21pt;}</style></head> <body><p>Maksimov</p></body></html>');
 });
 
 app.get('/login/code2', (req, res) => {
-  res.setHeader('Content-Type', 'text/plain');
+  res.setHeader('Content-Type', 'text/plain;charset=utf-8');
   res.end('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 21pt;}</style></head> <body><p>Maksimov</p></body></html>');
 });
 
