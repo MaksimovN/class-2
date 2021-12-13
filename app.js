@@ -19,27 +19,27 @@ const task = (x) => {
 };
 
 app.get('/login', (req, res) => {
-  res.send('Максимов');
+  res.end('Максимов');
 });
 
 app.get('/login/1', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
-  res.send('Максимов');
+  res.end('Максимов');
 });
 
 app.get('/login/2', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
-  res.send('Максимов');
+  res.end('Максимов');
 });
 
 app.get('/login/code1', (req, res) => {
   res.setHeader('Content-Type', 'text/html');
-  res.send('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 21pt;}</style></head> <body><p>Maksimov</p></body></html>');
+  res.end('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 21pt;}</style></head> <body><p>Maksimov</p></body></html>');
 });
 
 app.get('/login/code2', (req, res) => {
   res.setHeader('Content-Type', 'text/plain');
-  res.send('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 21pt;}</style></head> <body><p>Maksimov</p></body></html>');
+  res.end('<html><head><meta charset="utf-8"><style>p {font-weight: bold; font-size: 21pt;}</style></head> <body><p>Maksimov</p></body></html>');
 });
 
 app.get('/promise', (req, res) => {
